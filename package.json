@@ -15,6 +15,7 @@
     "gulp": "^5.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-less": "^5.0.0",
+    "gulp-replace": "^1.1.4",
     "gulp-uglify": "^3.0.2",
     "less": "^4.2.2"
   }
