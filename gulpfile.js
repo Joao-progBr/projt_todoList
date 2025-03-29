@@ -3,6 +3,11 @@ const uglify = require('gulp-uglify')
 const less = require('gulp-less')
 const cleanCss = require('gulp-clean-css')
 
+function moveHtml(){
+    return gulp.src('./src/index.html')
+    .pipe(gulp.dest('./dist/'))
+}
+
 function compLess(){
     return gulp.src('./src/style/*.less')
     .pipe(less())
@@ -16,7 +21,7 @@ function minJs(){
     .pipe(gulp.dest('./dist/script/'))
 }
 
-exports.default = gulp.parallel(compLess, minJs)
+exports.default = gulp.parallel(compLess, minJs, moveHtml)
 exports.watch = function(){
     gulp.watch('./src/style/*.less', gulp.parallel(compLess))
     gulp.watch('./src/script/*.js', gulp.parallel(minJs))
